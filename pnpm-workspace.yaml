@@ -1,0 +1,34 @@
+packages:
+  - apps/*
+  - packages/*
+  - tools/*
+
+catalogMode: prefer
+
+catalog:
+  "@types/node": ^24
+  "@cloudflare/workers-types": ^4.20260529.1
+  typescript: ^5
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vitest: npm:@voidzero-dev/vite-plus-test@latest
+  vite-plus: latest
+  alchemy: 2.0.0-beta.51
+  effect: 4.0.0-beta.75
+  "@effect/sql-sqlite-do": 4.0.0-beta.75
+  "@effect/platform-node": 4.0.0-beta.75
+overrides:
+  vite: "catalog:"
+  vitest: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: "*"
+    vitest: "*"
+allowBuilds:
+  msgpackr-extract: true
+  workerd: true
+minimumReleaseAgeExclude:
+  - "@effect/platform-node-shared@4.0.0-beta.77"
+  - "@effect/platform-node@4.0.0-beta.77"
